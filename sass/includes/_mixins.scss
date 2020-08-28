@@ -1,0 +1,27 @@
+@mixin dflex($jalign: center, $alignitems:center) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: $jalign;
+    align-items: $alignitems;
+}
+
+@mixin pos-abs($width:100%, $height: 100%, $top:0, $bottom:auto, $left:0, $right: auto) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    width: $width;
+    height: $height;
+}
+
+@mixin pos-fixed($width:auto, $height: auto, $top:0, $bottom:auto, $left:0, $right: auto) {
+    position: fixed;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    width: $width;
+    height: $height;
+}

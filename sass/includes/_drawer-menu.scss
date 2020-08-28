@@ -1,0 +1,66 @@
+.drawer-menu {
+    @include pos-fixed(100%, 100vh);
+    z-index: 999;    
+    background: $purpleLinearGradient;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: 250ms;
+
+    .menus {
+        @include pos-abs(250px, 100%, 0, auto, -100%, auto);
+        background: $white;
+        overflow-y: auto;
+        transition: 300ms;
+
+        .menus-title {
+            background: $lightGray;
+            color: $dark;
+            font-size: 1.2rem;
+            padding: 5px 10px;
+        }
+
+        ul {
+            padding: 10px;
+            margin-top: 30px;
+            li {
+                display: block;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    padding: 5px 0px;
+                    color: $dark;
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+        .close-drawer {
+            @include pos-abs(auto, auto, 6px, auto, auto, 10px);
+            content: 'X';
+            color: $dark;
+            cursor: pointer;
+            z-index: 999;
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+
+    &.open-drawer {
+        visibility: visible;
+        opacity: 1;        
+        transition: 250ms;
+
+        .menus {
+            left: 0;
+            transition: 500ms;
+        }
+    }
+
+}

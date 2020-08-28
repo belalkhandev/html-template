@@ -1,0 +1,53 @@
+/*
+    Project: Newspaper.SG
+    Version: 1.0.0
+    Date Created: 08/22/2020
+    Last Updated: 08/22/2020
+    Author: Belal khan
+    Website: http://devbethemes.com
+    Email: belalkhan.dev@gmail.com
+*/
+
+/* 
+Table of Content
+    1.  Default
+    1.  Layout
+*/ 
+
+// GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+// TEMPLATES
+@import'./includes/variables';
+
+@import'./includes/mixins';
+
+/* DEFAULT */
+
+@import'./includes/default';
+
+/* LAYOUTS */ 
+@import'./includes/header';
+/* SIGNIN DRAWER */
+@import './includes/signin_drawer';
+
+/* NAVIGATION */
+@import './includes/navigation';
+
+/* DRAWER MENU*/
+@import './includes/drawer-menu'; 
+
+/* DRAWER SEARCH BOX*/
+@import './includes/drawer-search'; 
+
+/* TOP NEWS */
+@import './includes/topnews';
+
+/* CATEGORY NEWS */ 
+@import './includes/category-news';
+
+/* SIDEBAR */
+@import './includes/sidebar'; 
+
+/* FOOTER */ 
+@import './includes/footer';

@@ -1,0 +1,79 @@
+.sign-in {
+    @include pos-fixed(100%, 100%, 0, auto, 0, auto);
+    background: $purpleLinearGradient;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: 250ms;
+
+    .sign-in-form, .sign-up-form{
+        @include pos-abs(320px, 100%, 0, auto, auto, -100%);
+        padding: 50px 20px 0px 20px;
+        background: $white;
+        transition: 300ms;
+
+        .signin-header {
+            h3 {
+                font-weight: 700;
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+        }
+
+        .signin-body {
+            .form-group {
+                .form-control {
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .close-signin {
+        @include pos-abs(auto, auto, 10px, auto, auto, -100%);
+        cursor: pointer;
+        font-size: 1.2rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: 300ms;
+    }
+
+    &.open-signin {
+        visibility: visible;
+        opacity: 1;        
+        transition: 250ms;
+
+        .sign-up-form {
+            right: -100%;
+            transition: 500ms;
+        }
+
+        .sign-in-form {
+            right: 0;
+            transition: 500ms;
+        }
+
+        &.open-signup {
+            .sign-in-form {
+                right: -100%;
+                transition: 500ms;
+            }
+
+            .sign-up-form {
+                right: 0;
+                transition: 500ms;
+            }
+        }
+
+        .close-signin {
+            right: 10px;
+            visibility: visible;
+            opacity: 1;
+            transition: 500ms 500ms;
+        }
+    }
+}

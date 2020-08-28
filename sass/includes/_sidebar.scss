@@ -1,0 +1,265 @@
+.sidebar-item {
+    margin: 20px 0px 30px 0px;
+    .sidebar-item-header {
+        text-align: center;
+        .sidebar-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+
+            &::after, &::before {
+                @include pos-abs(40px, auto, 50%, auto, -45px, auto);
+                content: '';
+                border-top: 3px double $darkGray;
+                transform: translate(0%, -50%);
+            }
+
+            &::before {
+                left: auto;
+                right: -45px;
+            }
+        }
+    }
+    .sidebar-item-tabs {
+        background-color: $dark;
+
+        .nav-tabs {
+            border-bottom: 3px solid $blue;
+
+            .nav-link {
+                border-radius: 0px;
+                border: none;
+                background: none;
+                padding: 8px 20px;
+                color: $gray;
+                text-transform: uppercase;
+                font-weight: 600;
+
+                &:hover {
+                    color: $white;
+                    transition: 200ms;
+                }
+                &.active {
+                    background: $blue;
+                    color: $white;
+                    transition: 200ms;
+                }
+            }
+        }
+    }
+    .sidebar-item-body {
+        padding: 10px 5px;
+    }
+}
+
+.latest-newses {
+    padding-bottom: 10px;
+    .latest-news {
+        margin-bottom: 15px;
+        a {
+            @include dflex(center, flex-start);
+
+            img {
+                width: 30%;
+                margin-right: 10px;
+            }
+
+            .latest-news-content {
+                h4 {
+                    font-size: 1rem;
+                    color: $dark;
+                }
+            }
+
+            
+        }
+    }
+
+    &.owl-carousel {
+        .owl-nav {
+            @include pos-abs(auto, auto, auto, 0, 50%, auto);
+            transform: translate(-50%, 0%);
+            color: $darkGray;
+
+            .owl-next, .owl-prev {
+                padding: 2px 6px !important;
+                border: 1px solid $gray;
+                outline: none;
+                margin-left: 5px;
+
+                &:hover {
+                    color: $blue;
+                    transition: 300ms;
+                }
+            }
+        }
+    }
+}
+
+.trend-newses {
+    padding-bottom: 10px;
+    .trend-news-items {
+        .trend-news {
+            .trend-news-item {
+                margin-bottom: 15px;
+
+                a {
+                    @include dflex(center, center);
+                    color: $dark;
+                    text-decoration: none;
+
+                    .trend-news-content {
+                        width: 65%;
+                        h4 {
+                            font-size: 1rem;
+                        }
+
+                        p {
+                            font-size: 0.7rem;
+                            span {
+                                color: $darkGray;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: calc(35% - 10px);
+                        margin-left: 10px;
+                    }
+                    &:hover {
+                        .trend-news-content {
+                            h4 {
+                                text-decoration: underline;
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.owl-carousel {
+        .owl-nav {
+            @include pos-abs(auto, auto, auto, 0, 50%, auto);
+            transform: translate(-50%, 0%);
+            color: $darkGray;
+
+            .owl-next, .owl-prev {
+                padding: 2px 6px !important;
+                border: 1px solid $gray;
+                outline: none;
+                margin-left: 5px;
+
+                &:hover {
+                    color: $blue;
+                    transition: 300ms;
+                }
+            }
+        }
+    }  
+}
+
+.popular-newses {
+    .popular-news {
+        margin-bottom: 15px;
+        a {
+            @include dflex(center, center);
+            color: $dark;
+            text-decoration: none;
+
+            img {
+                width: 30%;
+                margin-right: 10px;
+            }
+
+            .popular-news-content {
+                width: calc(70% - 10px);
+                h4 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.7rem;
+                    span {
+                        color: $darkGray;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            &:hover {
+                .popular-news-content {
+                    h4 {
+                        text-decoration: underline;
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar-tags {
+    ul, .tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+               
+        li {
+            padding: 2px 5px;
+            a{
+                border: 1px solid $gray;
+                color: $darkGray;
+                padding: 5px 10px;
+                display: block;
+                text-decoration: none;
+                transition: 250ms;
+
+                &:hover {
+                    border-color: $blue;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+.comments {
+    padding-bottom: 20px;
+    .comment {
+        text-align: center;
+        // background: $lightGray;
+        padding: 10px;
+        a {
+            color: $dark;
+        }
+
+        .comment-author {
+            margin-top: 10px;
+            text-align: right;
+        }
+    }
+    &.owl-carousel {
+        .owl-nav {
+            @include pos-abs(auto, auto, auto, 0, 50%, auto);
+            transform: translate(-50%, 0%);
+            color: $darkGray;
+
+            .owl-next, .owl-prev {
+                padding: 2px 6px !important;
+                border: 1px solid $gray;
+                outline: none;
+                margin-left: 5px;
+
+                &:hover {
+                    color: $blue;
+                    transition: 300ms;
+                }
+            }
+        }
+    }  
+}

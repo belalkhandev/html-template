@@ -1,0 +1,102 @@
+.top-news-area {
+    padding: 10px 0px;
+    .top-newses {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(calc(25% - 10px), 1fr));
+        grid-auto-flow: dense;
+        grid-auto-rows: 180px;
+        grid-gap: 10px;
+
+        @media screen and (max-width: 992px){
+            grid-template-columns: repeat(auto-fill, minmax(calc(50% - 10px), 1fr));            
+            grid-auto-rows: 180px;
+        }
+
+        .top-news {
+            position: relative;
+            overflow: hidden;
+
+            .top-news-body {
+                position: relative;
+                height: 100%;
+
+                .top-news-thumbnails {
+                    @include pos-abs(100%, 100%, 0, auto, 0, auto);
+                    background: $gray;
+                    z-index: -1;
+                    overflow: hidden;
+                    img {
+                        max-width: none;
+                        min-width: 100%;
+                        min-height: 100%;
+                        transition: 300ms;
+
+                    }
+                }
+
+                .top-news-content {
+                    @include pos-abs(100%, auto, auto, 0, 0, auto);
+                    z-index: 2;
+                    padding: 10px;
+                    color: $white;
+                    p {
+                        font-size: 0.8rem;
+                        color: $blue;
+                    }
+
+                    h2 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 2;
+
+                @media screen and (max-width: 992px){
+                    grid-column: span 2;
+                    grid-row: span 2;
+                }
+                .top-news-body {
+                    .top-news-content {
+                        h2 {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            &::after {
+                @include pos-abs(100%, 100%, 0, auto, 0, auto);
+                background: $dark;
+                opacity: 0.2;
+                content: '';
+                z-index: -1;
+                transition: 500ms;
+            }
+
+            &:hover {
+                overflow: hidden;
+                .top-news-content {
+                    h2 {
+                        text-decoration: underline;
+                    }
+                }
+
+                .top-news-thumbnails {
+                    img {                        
+                        transform: scale(1.1);
+                        transition: 500ms;
+                    }
+                }
+
+                &::after {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.search-box {
+    @include pos-fixed(100%, 100%, 0, auto, 0, auto);
+    background: $purpleLinearGradient;
+    // background: #00000048;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: 500ms;
+
+    .close-search-box {
+        @include pos-abs(auto, auto, 15px, auto, auto, -100%);
+        color: $dark;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 1.2rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: 300ms;
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    .search-form {
+        @include pos-abs(100%, 70%, -100%, auto, 0, auto);
+        background: $white;
+        transition: 300ms;
+        z-index: 1;
+
+        form {
+            border-bottom: 2px solid $dark;
+            width: 80%;
+            padding: 10px;
+
+            span {
+                font-size: 2.5rem;
+                color: $dark;
+            }
+
+            input[type="text"] {
+                margin-left: 20px;
+                border: 0px solid $white;
+                outline: none;
+                width: 100%;
+                max-width: 100%;
+                font-size: 2.5rem;
+                font-family: $ibm;
+
+                &::placeholder {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    &.open-search-box {
+        visibility: visible;
+        opacity: 1;
+        transition: 300ms;
+
+        .search-form {
+            top: 0;
+            transition: 500ms;
+        }
+        
+        .close-search-box {
+            right: 20px;
+            visibility: visible;
+            opacity: 1;
+            transition: 500ms 500ms;
+        }
+    }
+}
